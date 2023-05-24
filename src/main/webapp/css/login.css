@@ -1,0 +1,131 @@
+body {
+    background-color: #1B88BD !important;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 13.5%;
+}
+
+.header > img {
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    margin-top: 30%;
+}
+
+.content > .content__google > .google-btn {
+    display: flex;
+    border: 0.7px #fff solid;
+    border-radius: 50px;
+    width: 93vw;
+    height: 55px;
+    justify-content: space-around;
+}
+
+.content > .content__google > .google-btn > img {
+    width: 35px;
+}
+
+.content > .content__google > .google-btn > .btn--white {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.separator{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+}
+
+.separator::before{
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #fff;
+    margin-right: 16px;
+}
+
+.separator::after{
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #fff;
+    margin-left: 16px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form > .user {
+    display: flex;
+    background-color: #fff;
+    width: 93vw;
+    height: 51px;
+    border-radius: 9px;
+}
+
+.login-form > .password {
+    display: flex;
+    background-color: #fff;
+    width: 93vw;
+    height: 51px;
+    border-radius: 9px;
+}
+
+.login-form > .btn-login > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+@media only screen and (min-width: 769px) {
+    .header {
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    .content {
+        max-width: 40%;
+        margin-top: unset;
+    }
+
+    .content > .content__google {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content > .content__google > .google-btn {
+        width: 300px;
+    }
+
+    .content > .content__google > .google-btn > img {
+        width: 25px;
+    }
+
+    .login-form > .user {
+        width: unset;
+    }
+    
+    .login-form > .password {
+        width: unset;
+    }
+}
