@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +72,7 @@
               <img src="./assets/menu-right.svg" alt="seta direita">
             </div>
         </div>
-        <span>${ request.getAttribute("cliente"); }</span>
+        
         <div class="graph">
           <img src="./assets/chart.svg" class="pie-chart" alt="Grafico de gastos">
         </div>
@@ -112,6 +114,11 @@
             <p class="detailed-list__total">R$ 1.563,28</p>
           </div>
         </div>
+        <c:forEach var="n" items="${movs}">
+	      <tr>
+	        <td>${n}</td>
+	      </tr>
+	    </c:forEach>
       </div>
     </main>
 </body>

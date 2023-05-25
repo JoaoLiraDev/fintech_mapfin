@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import model.Conta;
 import core.DBManager;
 import java.sql.PreparedStatement;
@@ -82,4 +84,42 @@ public class ContaDAO {
         return lista;
       }
     
+    public Conta buscarPorId(String codigoBusca) {
+		Conta Conta = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conexao = DBManager.getInstance().obterConexao();
+			stmt = conexao.prepareStatement("SELECT * FROM T_SOF_CONTA WHERE T_SOF_CLIENTE_ID_CLIENTE = ?");
+			stmt.setString(1, codigoBusca);
+			rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				String ID_CONTA = rs.getString("ID_CONTA");
+		        String NM_CONTA = rs.getString("NM_CONTA");
+		        int ACTIVE = rs.getInt("ACTIVE");
+		        float SALDO = rs.getFloat("SALDO");
+		        String T_SOF_CLIENTE_ID_CLIENTE = rs.getString("T_SOF_CLIENTE_ID_CLIENTE");
+		        
+		        //Cria um objeto Colaborador com as informações encontradas
+		        try {
+		        	Conta = new Conta(ID_CONTA, NM_CONTA, ACTIVE, SALDO, T_SOF_CLIENTE_ID_CLIENTE);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				rs.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return Conta;
+	}
   }

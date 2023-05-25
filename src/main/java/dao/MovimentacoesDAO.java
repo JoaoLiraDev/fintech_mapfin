@@ -44,7 +44,7 @@ public class MovimentacoesDAO {
       }       
     }
     
-    public List<Movimentacoes> listar() {
+    public List<Movimentacoes> listar(String id) {
     	
         //Cria uma lista de endereços
         List<Movimentacoes> lista = new ArrayList<Movimentacoes>();
@@ -53,7 +53,8 @@ public class MovimentacoesDAO {
         
         try {
           conexao = DBManager.getInstance().obterConexao();
-        stmt = conexao.prepareStatement("SELECT * FROM T_SOF_MOVIMENTACOES");
+        stmt = conexao.prepareStatement("SELECT * FROM T_SOF_MOVIMENTACOES WHERE T_SOF_CONTA_ID_CONTA = ?");
+        stmt.setString(1, id);
         rs = stmt.executeQuery();
       
         //Percorre todos os registros encontrados
