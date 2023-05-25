@@ -114,9 +114,13 @@
             <p class="detailed-list__total">R$ 1.563,28</p>
           </div>
         </div>
+        <p>${movs}</p>
         <c:forEach var="n" items="${movs}">
 	      <tr>
-	        <td>${n}</td>
+	        <td>${n.getID_MOV()}</td>
+	        <td>${n.getIN_TIPO()}</td>
+	        <td>${n.getDS_DESCRICAO()}</td>
+	        <td>${n.getVL_MOVIMENTACAO()}</td>
 	      </tr>
 	    </c:forEach>
       </div>

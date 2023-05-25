@@ -14,15 +14,18 @@ import java.util.List;
 
 import dao.MovimentacoesDAO;
 
-@WebServlet("/Home")
+@WebServlet("/home")
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		MovimentacoesDAO dao = new MovimentacoesDAO();
 		String accountID = request.getParameter("account"); 
+		System.out.println(accountID);
 		ArrayList<Movimentacoes> mov = (ArrayList<Movimentacoes>) dao.listar(accountID);
 		request.setAttribute("movs", mov);
+		
+		request.getRequestDispatcher("home.jsp").forward(request, response);
 		
 	}
 
