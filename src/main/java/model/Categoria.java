@@ -1,14 +1,15 @@
 package model;
+
+import java.util.UUID;
+
+public class Categoria {
   
- 
-  public class Categoria {
-  
-    private String ID_CATEGORIA;
+    private UUID ID_CATEGORIA;
           
     private String NM_CATEGORIA;
         
     
-    public Categoria(String ID_CATEGORIA, String NM_CATEGORIA) {
+    public Categoria(UUID ID_CATEGORIA, String NM_CATEGORIA) {
     	
       super();
       this.ID_CATEGORIA = ID_CATEGORIA;
@@ -21,10 +22,10 @@ package model;
     }
 
 	public String getID_CATEGORIA() {
-		return ID_CATEGORIA;
+		return ID_CATEGORIA.toString();
 	}
 
-	public void setID_CATEGORIA(String ID_CATEGORIA) {
+	public void setID_CATEGORIA(UUID ID_CATEGORIA) {
 		this.ID_CATEGORIA = ID_CATEGORIA;
 	}
 

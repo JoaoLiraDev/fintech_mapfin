@@ -8,6 +8,7 @@ import model.Categoria;
 import core.DBManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.UUID;
 
 public class CategoriaDAO {
     
@@ -57,7 +58,7 @@ public class CategoriaDAO {
         String NM_CATEGORIA = rs.getString("NM_CATEGORIA");
         
         //Cria um objeto Colaborador com as informações encontradas
-         Categoria categoria = new Categoria(ID_CATEGORIA, NM_CATEGORIA);
+         Categoria categoria = new Categoria(UUID.fromString(ID_CATEGORIA), NM_CATEGORIA);
         
          //Adiciona o colaborador na lista
             lista.add(categoria);

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.wrapper {
+   padding: 1em;
+   background: white;
+   height: 19rem;
+   width: 34rem;
+   margin: 3em;
+}
+
+.wrapper__form > div {
+	display: flex;
+    background: transparent;
+    border-radius: 9px;
+}
+
+.submit-btn {
+	display: flex;
+	justify-content: center;
+	
+}
+
+.submit-btn > button {
+	background: #6CC8F7;
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	border: 0;
+	cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.submit-btn > button:hover {
+	transform: scale(1.1);
+}

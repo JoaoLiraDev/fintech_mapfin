@@ -1,12 +1,14 @@
 package model;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.UUID;
 
 import core.Criptografia;
 
 public class Cliente {
   
-    private String ID_CLIENTE;
+    private UUID ID_CLIENTE;
           
     private String NM_CLIENTE;
         
@@ -14,15 +16,15 @@ public class Cliente {
     
     private String DS_PASSWORD;
     
-    private Calendar DT_NASCIMENTO;
+    private Date DT_NASCIMENTO;
     
     private String NR_TELEFONE;
     
-    private Calendar DT_CRIACAO;
+    private Date DT_CRIACAO;
     
-    private Calendar DT_ATUALIZACAO;
+    private Date DT_ATUALIZACAO;
     
-    public Cliente(String ID_CLIENTE, String NM_CLIENTE, String DS_EMAIL, String DS_PASSWORD, Calendar DT_NASCIMENTO, String NR_TELEFONE, Calendar DT_CRIACAO, Calendar DT_ATUALIZACAO) {
+    public Cliente(UUID ID_CLIENTE, String NM_CLIENTE, String DS_EMAIL, String DS_PASSWORD, Date DT_NASCIMENTO, String NR_TELEFONE, Date DT_CRIACAO, Date DT_ATUALIZACAO) {
     	
       super();
       this.ID_CLIENTE = ID_CLIENTE;
@@ -47,10 +49,10 @@ public class Cliente {
     }
 
 	public String getID_CLIENTE() {
-		return ID_CLIENTE;
+		return ID_CLIENTE.toString();
 	}
 
-	public void setID_CLIENTE(String ID_CLIENTE) {
+	public void setID_CLIENTE(UUID ID_CLIENTE) {
 		this.ID_CLIENTE = ID_CLIENTE;
 	}
 
@@ -83,11 +85,11 @@ public class Cliente {
 		
 	}
 
-	public Calendar getDT_NASCIMENTO() {
+	public Date getDT_NASCIMENTO() {
 		return DT_NASCIMENTO;
 	}
 
-	public void setDT_NASCIMENTO(Calendar DT_NASCIMENTO) {
+	public void setDT_NASCIMENTO(Date DT_NASCIMENTO) {
 		this.DT_NASCIMENTO = DT_NASCIMENTO;
 	}
 
@@ -99,19 +101,19 @@ public class Cliente {
 		this.NR_TELEFONE = NR_TELEFONE;
 	}
 
-	public Calendar getDT_CRIACAO() {
+	public Date getDT_CRIACAO() {
 		return DT_CRIACAO;
 	}
 
-	public void setDT_CRIACAO(Calendar DT_CRIACAO) {
+	public void setDT_CRIACAO(Date DT_CRIACAO) {
 		this.DT_CRIACAO = DT_CRIACAO;
 	}
 
-	public Calendar getDT_ATUALIZACAO() {
+	public Date getDT_ATUALIZACAO() {
 		return DT_ATUALIZACAO;
 	}
 
-	public void setDT_ATUALIZACAO(Calendar DT_ATUALIZACAO) {
+	public void setDT_ATUALIZACAO(Date DT_ATUALIZACAO) {
 		this.DT_ATUALIZACAO = DT_ATUALIZACAO;
 	}
 

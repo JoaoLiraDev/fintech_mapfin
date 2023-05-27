@@ -76,13 +76,20 @@ main > .content {
     width: 200px;
     margin-top: 15px;
 }
-.content > .actions > .actions__tab > span {
+.content > .actions > .actions__tab > a > span {
     display: flex;
     padding: 1px 10px 1px 10px;
     background-color: #105475;
     border-radius: 15px;
     color: #fff;
     font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+}
+
+.content > .actions > .actions__tab > a > span:hover {
+    transform: scale(1.1);
 
 }
 
@@ -97,6 +104,24 @@ main > .content {
 
 .content > .actions > .actions__month-selector > p {
     margin-bottom: unset;
+}
+
+.detailed-list {
+	overflow-y: auto !important;
+}
+
+.detailed-list::-webkit-scrollbar {
+  width: 5px;               /* width of the entire scrollbar */
+}
+
+.detailed-list::-webkit-scrollbar-track {
+  background: white;        /* color of the tracking area */
+}
+
+.detailed-list::-webkit-scrollbar-thumb {
+  background-color: #105475;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid #105475;  /* creates padding around scroll thumb */
 }
 
 .detailed-list > .detailed-list__item {
