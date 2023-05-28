@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import model.Endereco;
 import core.DBManager;
 import java.sql.PreparedStatement;
@@ -70,7 +72,7 @@ public class EnderecoDAO {
         
             
         //Cria um objeto Colaborador com as informações encontradas
-         Endereco endereco = new Endereco(CEP, CIDADE, ESTADO, BAIRRO, NUMERO, REFERENCIA, COMPLEMENTO, T_SOF_CLIENTE_ID_CLIENTE);
+         Endereco endereco = new Endereco(CEP, CIDADE, ESTADO, BAIRRO, NUMERO, REFERENCIA, COMPLEMENTO, UUID.fromString(T_SOF_CLIENTE_ID_CLIENTE));
         
          //Adiciona o colaborador na lista
             lista.add(endereco);

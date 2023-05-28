@@ -8,7 +8,7 @@ import core.Criptografia;
 
 public class Cliente {
   
-    private UUID ID_CLIENTE;
+    private UUID ID_CLIENTE = UUID.randomUUID();
           
     private String NM_CLIENTE;
         
@@ -37,6 +37,19 @@ public class Cliente {
       this.DT_ATUALIZACAO = DT_ATUALIZACAO;
 
     }
+    
+    public Cliente(String NM_CLIENTE, String DS_EMAIL, String DS_PASSWORD, Date DT_NASCIMENTO, String NR_TELEFONE) {
+    	
+        super();
+        this.NM_CLIENTE = NM_CLIENTE;
+        this.DS_EMAIL = DS_EMAIL;
+        this.setPASSWORD(DS_PASSWORD);
+        this.DT_NASCIMENTO = DT_NASCIMENTO;
+        this.NR_TELEFONE = NR_TELEFONE;
+        this.DT_CRIACAO = new Date();
+        this.DT_ATUALIZACAO = new Date();
+
+      }
     
     public Cliente(String DS_EMAIL, String DS_PASSWORD) {
     	super();

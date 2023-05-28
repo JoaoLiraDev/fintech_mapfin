@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.user-icon {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    margin-top: 30px;
+    border-radius: 50%;
+    width: 10vw;
+}
+
+.user-icon > img {
+	width: 100px;
+	height: 100px;
+}
+
+form {
+    display: grid;
+    gap: 1em;
+    margin: 1em;
+}

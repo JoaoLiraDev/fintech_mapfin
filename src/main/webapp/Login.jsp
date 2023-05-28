@@ -26,10 +26,9 @@
     </div>
     <div class="container-fluid content">
       <div class="content__google">
-        <div class="google-btn">
-          <img src="./assets/googleLogo.svg" class="img-fluid" alt="Logo do google">
-          <button class="btn btn--white">Continuar com Google</button>
-        </div>
+          <a href="register.jsp" class="register-btn btn btn--white">
+          	Registre-se
+          </a>
       </div>
       <div class="separator">ou</div>
         <form class="login-form" action="Login" method="post">
@@ -56,9 +55,11 @@
           <button class="btn btn-primary btn-login" type="submit">
             Login
           </button>
-          <div class="alert alert-danger" role="alert" style="margin-top: 10px;">
-		  	${erro}
-		</div>
+          <c:if test="${not empty erro }">	
+        	<div class="alert alert-danger" role="alert" style="margin-top: 10px;">
+			  	${erro}
+			</div>
+		   </c:if>
         </form>
       </div>
     </div>

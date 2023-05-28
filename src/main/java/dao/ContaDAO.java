@@ -25,7 +25,7 @@ public class ContaDAO {
 			stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, conta.getID_CONTA());
 			stmt.setString(2, conta.getNM_CONTA());
-			stmt.setInt(3, conta.getACTIVE());
+			stmt.setBoolean(3, conta.getACTIVE());
 			stmt.setFloat(4, conta.getSALDO());
 			stmt.setString(5, conta.getT_SOF_CLIENTE_ID_CLIENTE());
 
@@ -80,7 +80,7 @@ public class ContaDAO {
 
 				String ID_CONTA = rs.getString("ID_CONTA");
 				String NM_CONTA = rs.getString("NM_CONTA");
-				int ACTIVE = rs.getInt("ACTIVE");
+				Boolean ACTIVE = rs.getBoolean("ACTIVE");
 				float SALDO = rs.getFloat("SALDO");
 				String T_SOF_CLIENTE_ID_CLIENTE = rs.getString("T_SOF_CLIENTE_ID_CLIENTE");
 
@@ -116,7 +116,7 @@ public class ContaDAO {
 			if (rs.next()) {
 				String ID_CONTA = rs.getString("ID_CONTA");
 				String NM_CONTA = rs.getString("NM_CONTA");
-				int ACTIVE = rs.getInt("ACTIVE");
+				Boolean ACTIVE = rs.getBoolean("ACTIVE");
 				float SALDO = rs.getFloat("SALDO");
 				String T_SOF_CLIENTE_ID_CLIENTE = rs.getString("T_SOF_CLIENTE_ID_CLIENTE");
 

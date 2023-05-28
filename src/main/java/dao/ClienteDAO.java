@@ -48,6 +48,39 @@ public class ClienteDAO {
 			}
 		}
 	}
+	
+	public void atualizar(Cliente cliente) {
+		PreparedStatement stmt = null;
+
+		try {
+
+			conexao = DBManager.getInstance().obterConexao();
+			String sql = "UPDATE T_SOF_CLIENTE SET NM_CLIENTE=?, DS_EMAIL=?, DS_PASSWORD=?, DT_NASCIMENTO=?, NR_TELEFONE=?, DT_CRIACAO=?, DT_ATUALIZACAO=? WHERE ID_CLIENTE=?";
+			stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, cliente.getNM_CLIENTE());
+			stmt.setString(2, cliente.getDS_EMAIL());
+			stmt.setString(3, cliente.getDS_PASSWORD());
+			java.sql.Date data = new java.sql.Date(cliente.getDT_NASCIMENTO().getTime());
+			stmt.setDate(4, data);
+			stmt.setString(5, cliente.getNR_TELEFONE());
+			java.sql.Date data2 = new java.sql.Date(cliente.getDT_CRIACAO().getTime());
+			stmt.setDate(6, data2);
+			java.sql.Date data3 = new java.sql.Date(cliente.getDT_ATUALIZACAO().getTime());
+			stmt.setDate(7, data3);
+			stmt.setString(8, cliente.getID_CLIENTE());
+
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 
 	public List<Cliente> listar() {
 

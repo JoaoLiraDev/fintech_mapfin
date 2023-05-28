@@ -1,5 +1,6 @@
 package model;
 
+import java.util.UUID;
 
 public class Endereco {
   
@@ -17,9 +18,9 @@ public class Endereco {
     
     private String COMPLEMENTO;
     
-    private String T_SOF_CLIENTE_ID_CLIENTE;
+    private UUID T_SOF_CLIENTE_ID_CLIENTE;
     
-    public Endereco(String CEP, String CIDADE, String ESTADO, String BAIRRO, String NUMERO, String REFERENCIA, String COMPLEMENTO, String T_SOF_CLIENTE_ID_CLIENTE) {
+    public Endereco(String CEP, String CIDADE, String ESTADO, String BAIRRO, String NUMERO, String REFERENCIA, String COMPLEMENTO, UUID T_SOF_CLIENTE_ID_CLIENTE) {
     	
       super();
       this.CEP = CEP;
@@ -93,10 +94,10 @@ public class Endereco {
 	}
 
 	public String getT_SOF_CLIENTE_ID_CLIENTE() {
-		return T_SOF_CLIENTE_ID_CLIENTE;
+		return T_SOF_CLIENTE_ID_CLIENTE.toString();
 	}
 
-	public void setT_SOF_CLIENTE_ID_CLIENTE(String T_SOF_CLIENTE_ID_CLIENTE) {
+	public void setT_SOF_CLIENTE_ID_CLIENTE(UUID T_SOF_CLIENTE_ID_CLIENTE) {
 		this.T_SOF_CLIENTE_ID_CLIENTE = T_SOF_CLIENTE_ID_CLIENTE;
 	}
 

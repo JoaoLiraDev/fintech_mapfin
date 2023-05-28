@@ -24,18 +24,18 @@
     <div class="offcanvas-body px-0">
       <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
         <li class="nav-item">
-          <a href="#" class="nav-link text-truncate">
+          <a href="home.jsp" class="nav-link text-truncate">
             <i class="fs-5"><img src="./assets/house.svg" alt="icone home"></i><span
               class="ms-1 d-none d-sm-inline">Home</span>
           </a>
         </li>
         <li>
-          <a href="#submenu1" data-bs-toggle="collapse" class="nav-link text-truncate">
+          <a href="#submenu1" data-bs-toggle="collapse" class="nav-link text-truncate disabled">
             <i class="fs-5"><img src="./assets/graph-up-arrow.svg" alt="icone dashboard"></i><span
               class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
         </li>
         <li>
-          <a href="#" class="nav-link text-truncate">
+          <a href="profile.jsp" class="nav-link text-truncate">
             <i class="fs-5"><img src="./assets/gear.svg" alt="icone engrenagem"></i><span
               class="ms-1 d-none d-sm-inline">Configurações</span>
           </a>
